@@ -117,7 +117,7 @@ export async function GET() {
     await seedRevenue();
 
     // Commit the transaction
-    await client.sql`COMMIT`;
+    await client.sql`COMMIT`; 
 
     // Return a success response
     return new Response(JSON.stringify({ message: 'Database seeded successfully' }), {
