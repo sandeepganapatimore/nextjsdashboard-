@@ -20,10 +20,6 @@ export async function createInvoice(formData:FormData){
     // console.log(rawFormData)
     const amountInCents = amount * 100;
     const date = new Date().toISOString().split('T')[0];
+    await sql`INSERT INTO (customer_id,amount,status,date) values (${customerId},${amountInCents},${status},${date})`
 }
 
-// const FormSchema=z.object({
-//     id:z.string(),
-//     customerId:z.string(),
-    
-// })
